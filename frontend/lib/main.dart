@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 // ¡¡¡IMPORTANTE!!! Reemplaza esto con TU URL REAL de Render
-const String apiUrl = "https://app-de-consulta.onrender.com";
+const String apiUrl = "https://app-de-consulta.onrender.com/api/users";
 
 void main() => runApp(const MyApp());
 
