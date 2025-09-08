@@ -41,6 +41,16 @@ app.get('/api/users', async (req, res) => {
         res.status(500).json({ message: 'Error en el servidor', error: error.message });
     }
 });
+// index.js
+
+// ... (aquí está tu ruta /api/users)
+
+// --- NUEVO ENDPOINT DE SALUD ---
+// Esta ruta es para que Uptime Robot la visite y mantenga vivo el servicio.
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
 
 app.listen(port, () => {
     console.log(`🚀 Servidor corriendo en el puerto: ${port}`);
