@@ -1,5 +1,5 @@
 // lib/main.dart
-
+import 'conversation_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -112,14 +112,31 @@ class _HomePageState extends State<HomePage> {
                                 itemCount: _items.length,
                                 itemBuilder: (context, index) {
                                   final item = _items[index];
-                                  return Card(
-                                    margin: const EdgeInsets.symmetric(vertical: 4.0),
-                                    child: ListTile(
-                                      title: Text(item['business_name'] ?? 'Sin nombre de negocio'),
-                                      subtitle: Text(item['whatsapp_number'] ?? 'Sin número'),
-                                      trailing: const Icon(Icons.person),
-                                    ),
-                                  );
+                                 // ... dentro del ListView.builder en main.dart
+
+return Card(
+  margin: const EdgeInsets.symmetric(vertical: 4.0),
+  child: ListTile(
+    title: Text(item['business_name'] ?? 'Sin nombre de negocio'),
+    subtitle: Text(item['whatsapp_number'] ?? 'Sin número'),
+    trailing: const Icon(Icons.person),
+
+    // --- AÑADE ESTO ---
+    onTap: () {
+      // Esto es lo que sucede cuando tocas un usuario
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          // Le decimos que vaya a nuestra nueva pantalla y le pasamos los datos del 'item'
+          builder: (context) => ConversationDetailPage(user: item),
+        ),
+      );
+    },
+    // ------------------
+  ),
+);
+
+// ...
                                 },
                               ),
                           ),
