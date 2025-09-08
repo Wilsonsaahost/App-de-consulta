@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-// ¡¡¡IMPORTANTE!!! Reemplaza esto con TU URL REAL de Render
-const String apiUrl = "https://tu-url-de-render.onrender.com/api/users";
+// Â¡Â¡Â¡IMPORTANTE!!! Reemplaza esto con TU URL REAL de Render
+const String apiUrl = "https://app-de-consulta.onrender.com";
 
 void main() => runApp(const MyApp());
 
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
           _isLoading = false;
         });
       } else {
-        throw Exception('Fallo al cargar los datos. Código: ${response.statusCode}');
+        throw Exception('Fallo al cargar los datos. CÃ³digo: ${response.statusCode}');
       }
     } catch (e) {
       setState(() {
@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                                     margin: const EdgeInsets.symmetric(vertical: 4.0),
                                     child: ListTile(
                                       title: Text(item['business_name'] ?? 'Sin nombre de negocio'),
-                                      subtitle: Text(item['whatsapp_number'] ?? 'Sin número'),
+                                      subtitle: Text(item['whatsapp_number'] ?? 'Sin nÃºmero'),
                                       trailing: const Icon(Icons.person),
                                     ),
                                   );
