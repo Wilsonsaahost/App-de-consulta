@@ -27,7 +27,7 @@ mongoose.connect("mongodb+srv://wilsonsaa_db_user:Wsaa0225@hostaddres.zejnahf.mo
     })
     .catch(err => {
         console.error("❌ Error al conectar a MongoDB:", err);
-    });
+    })
 
 // ... (resto del código)
     .then(() => {
