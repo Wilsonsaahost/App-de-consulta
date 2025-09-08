@@ -13,7 +13,23 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI)
+//mongoose.connect(process.env.MONGO_URI)
+// index.js
+
+// ... (código anterior)
+
+// Conexión a la base de datos con logs mejorados
+
+// mongoose.connect(process.env.MONGO_URI) // <-- LÍNEA ORIGINAL COMENTADA
+mongoose.connect("mongodb+srv://wilsonsaa_db_user:Wsaa0225@hostaddres.zejnahf.mongodb.net/Hostaddres?retryWrites=true&w=majority&appName=Hostaddres") // <-- AÑADE ESTA LÍNEA CON TU URI REAL
+    .then(() => {
+        console.log("✅ ¡Conexión a MongoDB Atlas establecida exitosamente!");
+    })
+    .catch(err => {
+        console.error("❌ Error al conectar a MongoDB:", err);
+    });
+
+// ... (resto del código)
     .then(() => {
         console.log("✅ ¡Conexión a MongoDB Atlas establecida exitosamente!");
     })
